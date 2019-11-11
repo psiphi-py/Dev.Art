@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% block about %}
+<!-- Received About Model Info i.t.o labout -->
+    <div class="container">
+        {% for t in labout %}
+
+    <!-- About class stored as t -->
+    <div class="row align-items-center">
+        <div class="col-6  p-5">
+            <h2 class="display-4">{{t.about_title}}</h2>
+            <!-- '|linebreak' registers newlines and spaces from textfield in t -->
+            <p class="lead">{{t.about_text|linebreaks}}</p>
+        </div>
+
+        <div class="col-6">
+            <div class="p-5">
+                <!-- About Profile photo -->
+                <img class="img-fluid rounded-circle" src="/media/{{t.about_image}}" alt="Artist Profile">
+            </div>
+        </div>
+
+    </div>
+
+    {% endfor %}
+
+{% endblock %}
+    </div>
+
+<!-- Footer is fixed at bottom for aesthetic purposes (else it floats in the middle of the screen) -->
+{% block footer%}
+    <div class="navbar fixed-bottom">
+        <footer class="container">
+          <p class="text-muted">Devon du Toit 2018-2019 Dev.Art</p>
+        </footer>
+    </div>
+{% endblock %}

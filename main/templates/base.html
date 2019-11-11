@@ -1,0 +1,83 @@
+<!-- Parent HTML Page containing navigation bar and reserved locations for content -->
+<!doctype html>
+<html lang="en">
+    <head>
+        <!-- All static is via https://getbootstrap.com/ -->
+        {% load static %}
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+
+    </head>
+    <body>
+        <!-- Navigation bar content as per bootstrap example 'Carousel'
+        https://getbootstrap.com/docs/4.3/examples/carousel/-->
+        <header>
+          <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+            <!-- Site name Navigating back to home page whenever user clicks on it -->
+            <a class="navbar-brand" href="/">Dev.Art</a>
+            <!-- Mostly Bootstrap server side css commands for aesthetics -->
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
+            aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <!-- Secondary navigation buttons, standard to Bootstrap 'Carousel' where links and names of buttons
+            are changed -->
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+              <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                  <a class="nav-link" href="/featured/">Featured<span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item active">
+                  <a class="nav-link" href="/about/">About</a>
+                </li>
+                <li class="nav-item active">
+                  <a class="nav-link" href="/contact/">Contact</a>
+                </li>
+              </ul>
+                <!-- Newest Artwork simply moves the user to the bottom of the page where latest post is -->
+                <a class="btn btn-outline-success my-2 my-sm-0" href='/#new_art_work'>Newest Artwork</a>
+            </div>
+          </nav>
+        </header>
+
+        <main role="main">
+
+          {% block carousel %}{% endblock %}
+          <br>
+          <!-- Bootstrap layout (container marketing) to enclose only blocks artist and feature -->
+          <div class="container marketing">
+
+             {% block artist %}{% endblock %}
+
+             {% block feature %}{% endblock %}
+          </div>
+          <!-- Reserved spaces for content from other templates -->
+            {% block featured %}{% endblock %}
+            {% block inspect %}{% endblock %}
+            {% block about %}{% endblock %}
+            {% block contact %}{% endblock %}
+
+            <!-- Navigation link from #new_art_work -->
+            <a name="new_art_work">
+            <!-- Footer only visible at scrolled down bottom of page -->
+            {% block footer%}
+                <footer class="container">
+                  <p class="float-right"><a href="/">Back to top</a></p>
+
+                  <!-- This is mah swamp -Shrek -->
+                  <p class="text-muted">Devon du Toit 2018-2019 Dev.Art</p>
+                </footer>
+            {% endblock %}
+
+        </main>
+
+        <!-- scripts needed to run bootstrap https://getbootstrap.com/docs/4.3/getting-started/introduction/ -->
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    </body>
+</html>

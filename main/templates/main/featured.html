@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+{% block featured %}
+    <main role="main">
+<!-- Bootstrap example theme https://getbootstrap.com/docs/4.3/examples/album/ -->
+      <div class="album py-5 bg-light">
+        <div class="container">
+          <div class="row">
+              <!-- Imports Feature model as lf and looped through as f -->
+              {% for f in lf %}
+              <!-- Bootstrap css left unchanged -->
+                    <div class="col-md-4">
+                      <div class="card mb-4 shadow-sm">
+                        <img class="img-fluid" src="/media/{{f.featured_image}}" height="225">
+                        <!-- prints title variable -->
+                        <text class='text-muted' x="50%" y="50%" fill="#eceeef" dy=".3em">{{f.featured_title}}</text>
+                        <div class="card-body">
+                            <!-- prints text variable -->
+                          <p class="card-text">{{f.featured_text}}</p>
+                          <div class="d-flex justify-content-between align-items-center">
+                            <div class="btn-group">
+                              <!-- The selected photo's data id is send to urls.py to connect to the relevant view -->
+                              <p><a class="btn btn-secondary" href="/{{f.id}}/" role="button">View</a></p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+              {% endfor %}
+          </div>
+        </div>
+      </div>
+
+</main>
+{% endblock %}
+<!-- Footer without the 'navigate back to top' as per 'base.html' -->
+{% block footer%}
+    <footer class="container">
+      <p class="text-muted">Devon du Toit 2018-2019 Dev.Art</p>
+    </footer>
+{% endblock %}

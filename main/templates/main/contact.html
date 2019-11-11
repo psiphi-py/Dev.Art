@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block contact %}
+<!-- import Artist models as la and looped through as c -->
+    {% for c in la %}
+        <div class="container">
+          <div class="jumbotron mt-3">
+            <h1>Contact</h1>
+            <p class="lead">For Inquiries, Help or General Info</p>
+              <!-- Variable contact info as entered by admin -->
+            <p class="lead text-muted">{{c.contact}}</p>
+              <!-- Links to the site's source code on github for reference -->
+            <a class="btn btn-lg btn-secondary" href="https://github.com/psiphi-py/Dev.Art" role="button" target=
+            "_blank">GitHub</a>
+          </div>
+        </div>
+    {% endfor %}
+{% endblock %}
+
+<!-- Footer is fixed at bottom for aesthetic purposes (else it floats in the middle of the screen) -->
+{% block footer%}
+    <div class="navbar fixed-bottom">
+        <footer class="container">
+          <p class="text-muted">Devon du Toit 2018-2019 Dev.Art</p>
+        </footer>
+    </div>
+{% endblock %}
