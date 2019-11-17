@@ -99,9 +99,9 @@
           <div class="col-md-5">
             <!-- checks for boolean dimensions of artwork and adjust given box size -->
             {% if i.landscape %}
-              <img src="/media/{{i.image}}" width="450px" height="350px" alt="Art Image">
+              <a class="link" href="post{{i.id}}/"><img src="/media/{{i.image}}" width="450px" height="350px" alt="Art Image"></a>
             {% else %}
-              <img src="/media/{{i.image}}" width="400px" height="500px" alt="Art Image">
+              <a class="link" href="post{{i.id}}/"><img src="/media/{{i.image}}" width="400px" height="500px" alt="Art Image"></a>
             {% endif %}
           </div>
         </div>
@@ -117,9 +117,9 @@
           <div class="col-md-5">
             <!-- checks for boolean dimensions of artwork and adjust given box size -->
             {% if i.landscape %}
-              <img src="/media/{{i.image}}" width="400px" height="400px" alt="Art Image">
+              <a class="link" href="post{{i.id}}/"><img src="/media/{{i.image}}" width="400px" height="400px" alt="Art Image"></a>
             {% else %}
-              <img src="/media/{{i.image}}" width="400px" height="500px" alt="Art Image">
+              <a class="link" href="post{{i.id}}/"><img src="/media/{{i.image}}" width="400px" height="500px" alt="Art Image"></a>
             {% endif %}
           </div>
         </div>

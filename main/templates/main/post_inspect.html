@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block inspect %}
+<!-- Simply enlarges the photo of artwork for better viewing by giving it a whole page area-->
+    <div class="jumbotron vertical-center">
+        <div class="container">
+            <img src="/media/{{li2.image}}">
+        </div>
+    </div>
+{% endblock %}
+
+<!-- Footer is fixed at bottom for aesthetic purposes (else it floats in the middle of the screen) -->
+{% block footer%}
+    <div class="navbar fixed-bottom">
+        <footer class="container">
+          <p class="text-muted">Devon du Toit 2018-2019 Dev.Art</p>
+        </footer>
+    </div>
+{% endblock %}

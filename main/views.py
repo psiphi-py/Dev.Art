@@ -54,4 +54,11 @@ def contact(request):
     la = Artist.objects.all()
     return render(request, 'main/contact.html', {'la':la})
 
+def post_inspect(request, id):
+    li = Post.objects.all()
+    # received art id from urls.py and send this artwork to 'post_inspect.html'
+    li2 = li.get(id=id)
+
+    return render(request, 'main/post_inspect.html', {'li2': li2} )
+
 # It's the rhythm of the night - There, now the song is stuck in your head too.

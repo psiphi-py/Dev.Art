@@ -8,7 +8,8 @@ urlpatterns = [
     path('featured/', views.featured, name='featured'),
     path('<int:id>/',views.inspect, name='inspect'), # received art id from featured and relates this to a view: inspect
     path('about/', views.about, name='about'),
-    path('contact/', views.contact, name='contact')
+    path('contact/', views.contact, name='contact'),
+    path('post<int:id>/', views.post_inspect, name='post_inspect')
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 # simply used static during developmental stage to ensure media file are accessible, not used during deployment.
 
