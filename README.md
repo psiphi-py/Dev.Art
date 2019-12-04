@@ -11,3 +11,7 @@ Uploaded posts with artwork may be either landscape or portrait dimmensions.
 In 'main/urls.py' at the end of the block bracket there is are lines:" + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)# simply used static during developmental stage to ensure media file are accessible, not used during deployment." which need to be removed during deployment
 
 Contact me: dutoitdevon@gmail.com for help/ enquiries or general info
+
+*Link*
+
+Can be viewed on: http://devart.pythonanywhere.com
